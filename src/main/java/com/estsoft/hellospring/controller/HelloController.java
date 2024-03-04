@@ -5,6 +5,7 @@ import com.estsoft.hellospring.service.HiService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServlet;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cglib.proxy.Dispatcher;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.DispatcherServlet;
