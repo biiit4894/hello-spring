@@ -22,10 +22,10 @@ dependencies {
 
 	// 2월 29일 수업에 추가
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.2.3'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // 3월 4일 퍼시스턴스 계층 실습에 사용
 
-	runtimeOnly 'com.h2database:h2'
-	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2' // 3월 4일 퍼시스턴스 계층 실습에 사용
+	compileOnly 'org.projectlombok:lombok' // 3월 4일 퍼시스턴스 계층 실습에 사용
 	annotationProcessor 'org.projectlombok:lombok'
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
