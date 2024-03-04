@@ -1,9 +1,11 @@
-package com.estsoft.hellospring.controller;
+package com.estsoft.hellospring.domain;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
-@Entity
+@Getter
+@Entity // Entity는 Setter 사용을 지양함
 public class Member { //DB
     // 이 아이는 이제...DAO(repository)가 됩니다..
 //    private Long id;
@@ -19,4 +21,12 @@ public class Member { //DB
 
     @Column(name="name", nullable = false)
     private String name; // DB 테이블의 name과 컬럼 매칭
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

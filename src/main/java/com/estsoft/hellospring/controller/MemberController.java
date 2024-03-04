@@ -1,4 +1,5 @@
 package com.estsoft.hellospring.controller;
+import com.estsoft.hellospring.domain.Member;
 import com.estsoft.hellospring.service.MemberService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +17,8 @@ public class MemberController {
     }
     @GetMapping("/members")
     @ResponseBody   // @RestController
-    public List<Member> getAllMembers() {
-        return new ArrayList<>();
+    public List<MemberDTO> getAllMembers() {
+        return memberService.getAllMembers();
     }
 
 }

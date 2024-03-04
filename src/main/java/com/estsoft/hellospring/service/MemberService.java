@@ -1,6 +1,7 @@
 package com.estsoft.hellospring.service;
 
-import com.estsoft.hellospring.controller.Member;
+import com.estsoft.hellospring.controller.MemberDTO;
+import com.estsoft.hellospring.domain.Member;
 import com.estsoft.hellospring.repository.MemberRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +15,11 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public List<Member> getAllMembers() {
-        return memberRepository.findAll();
+    public List<MemberDTO> getAllMembers() {
+        List<Member> memberList = memberRepository.findAll();
+        System.out.println("memberList = " + memberList);
+        List<MemberDTO> resultList = memberList.stream().map(member -> new MemberDTO(member.getId(), member.getName())).toList();
+        return resultList;
         // select *  from member
 
     }
