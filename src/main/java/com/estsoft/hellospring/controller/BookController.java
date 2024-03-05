@@ -1,12 +1,14 @@
 package com.estsoft.hellospring.controller;
 
 import com.estsoft.hellospring.repository.BookRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @Controller
 public class BookController {
     //todo GET : /books
@@ -31,13 +33,18 @@ public class BookController {
                            @RequestParam("author") String author) {
 
         bookRepository.saveBook(new BookDTO(id, name, author));
+        try {
+
+        } catch(Exception e) {
+            log.error("");
+        }
         return "redirect:/books";
     }
 
     // GET /books/{id} @PathVariable 어노테이션 형태로 받을 수 있음
     @GetMapping("/books/{id}")
     public String detail(@PathVariable("id") String isbn, Model model) {
-        System.out.println("isbn = " + isbn);
+        log.info("isbn = " + isbn);
 
         // TODO 화면에 보여줄 book 객체를 model에 넣어주기(id, name, author)
         BookDTO book = bookRepository.getBook(isbn);
