@@ -19,6 +19,7 @@ public class MemberController {
     @ResponseBody   // @RestController
     public List<MemberDTO> getAllMembers() {
         return memberService.getAllMembers();
+        // json: [{"id": "", "name": "", "phone": ""}]
     }
 
 }
