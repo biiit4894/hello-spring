@@ -3,8 +3,7 @@ package com.estsoft.hellospring.controller;
 import com.estsoft.hellospring.repository.BookRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +25,24 @@ public class BookController {
         return "bookManager";
     }
 
+    @PostMapping("/books")
+    public String saveBook(@RequestParam("id") String id,
+                           @RequestParam("name") String name,
+                           @RequestParam("author") String author) {
 
+        bookRepository.saveBook(new BookDTO(id, name, author));
+        return "redirect:/books";
+    }
 
+    // GET /books/{id} @PathVariable 어노테이션 형태로 받을 수 있음
+    @GetMapping("/books/{id}")
+    public String detail(@PathVariable("id") String isbn, Model model) {
+        System.out.println("isbn = " + isbn);
+
+        // TODO 화면에 보여줄 book 객체를 model에 넣어주기(id, name, author)
+        BookDTO book = bookRepository.getBook(isbn);
+        model.addAttribute("book", book);
+
+        return "bookDetail";
+    }
 }

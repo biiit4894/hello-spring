@@ -3,6 +3,7 @@ package com.estsoft.hellospring.repository;
 import com.estsoft.hellospring.controller.BookDTO;
 import org.springframework.stereotype.Repository;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,5 +27,14 @@ public class BookRepository {
             bookList.add(book.getValue());
         }
         return bookList;
+    }
+
+    public BookDTO getBook(String id) {
+        return bookMap.getOrDefault(id, new BookDTO());
+        // 사실 그냥 get 해도 되지만, id가 없으면 빈 DTO를 가져다주기로
+    }
+
+    public void saveBook(BookDTO book) {
+        bookMap.put(book.getId(), book);
     }
 }
