@@ -28,7 +28,8 @@ public class HelloController {
     }
 
     @PostMapping("/hello/name/regist")
-    public int saveStudent(@RequestParam String name, @RequestParam Integer age) {
+    // 스키마 구조랑 다르게 파라미터를 설정해서인지 오류나는중(아직 안고침..ㅎ)
+    public int saveStudent(@RequestParam("name") String name, @RequestParam("age") Integer age) {
         return studentJdbcRepository.insertStudent(name, age);
     }
 }
