@@ -21,6 +21,8 @@ public class SimpleJdbcTest {
                 System.out.print(", Age: " + rs.getInt("age"));
                 System.out.println(", address: " + rs.getString("address"));
             }
+            // JDBC
+            //spring-jdbcTemplate ... mybatis(ibatis)... JPA
         } catch (SQLException e) {
             System.out.println(e.getErrorCode());
             System.out.println(e.getMessage());

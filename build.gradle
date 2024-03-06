@@ -19,6 +19,7 @@ dependencies {
 	// 2월 28일 initializer 실습으로 자동 추가 (버전 충돌 방지 위해 버전 명시 x)
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation('org.springframework.boot:spring-boot-starter-jdbc') // 3월 6일 jdbc 실습에 추가
 
 	// 2월 29일 수업에 추가
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.2.3'
@@ -26,12 +27,21 @@ dependencies {
 
 	// 3월 6일 jdbc 실습에 추가
 	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+	implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.5.1'
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.12'
+	implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.1'
+	//
 
 	runtimeOnly 'com.h2database:h2' // 3월 4일 퍼시스턴스 계층 실습에 사용
 	compileOnly 'org.projectlombok:lombok' // 3월 4일 퍼시스턴스 계층 실습에 사용
 	annotationProcessor 'org.projectlombok:lombok'
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
+
+	// 3월 6일 jdbc 실습에 추가
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation platform('org.junit:junit-bom:5.9.1')
+	testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
 
