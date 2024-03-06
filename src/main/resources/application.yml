@@ -8,6 +8,8 @@ spring:
     password: gksqlcroot
   flyway:
     enabled: false
+#server:
+#  port: 8088 # tomcat 서버에 포트번호 알려주는 것 가능
 
 logging:
   config: classpath:logback-local.xml
