@@ -20,6 +20,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation('org.springframework.boot:spring-boot-starter-jdbc') // 3월 6일 jdbc 실습에 추가
+	implementation ('org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3') // 3월 7일 mybatis 실습에 추가
 
 	// 2월 29일 수업에 추가
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.2.3'
@@ -30,7 +31,11 @@ dependencies {
 	implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.5.1'
 	implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.12'
 	implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.1'
-	//
+
+	/* 3월 7일 mybatis 실습에 추가 */
+	implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.14.0'
+	/* */
 
 	runtimeOnly 'com.h2database:h2' // 3월 4일 퍼시스턴스 계층 실습에 사용
 	compileOnly 'org.projectlombok:lombok' // 3월 4일 퍼시스턴스 계층 실습에 사용
