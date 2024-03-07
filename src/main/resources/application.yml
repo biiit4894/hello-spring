@@ -6,6 +6,14 @@ spring:
     url: jdbc:mysql://localhost:3306/test
     username: root
     password: gksqlcroot
+    minimum-idle: 1
+    maximum-pool-size: 5
+    pool-name: SampleConnectionPool
+    connectionTimeout: 10000
+    validationTimeout: 5000
+    idleTimeout: 600000
+    minimumIdle: 3
+    maximumPoolSize: 10
   flyway:
     enabled: false
 #server:
