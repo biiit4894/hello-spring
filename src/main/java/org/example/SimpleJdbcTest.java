@@ -3,10 +3,10 @@ package org.example;
 import java.sql.*;
 
 public class SimpleJdbcTest {
-    static final String DB_URL = "jdbc:mysql://localhost:3306/new_schema";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/test";
     static final String USER = "root";
     static final String PASS = "gksqlcroot";
-    static final String QUERY = "SELECT * FROM students";
+    static final String QUERY = "SELECT * FROM student";
 
     public static void main(String[] args) {
         // Open & get a connection
@@ -16,10 +16,10 @@ public class SimpleJdbcTest {
             // Extract data from result set after execute query
             while (rs.next()) {
                 // Retrieve by column name
-               // System.out.print("ID: " + rs.getInt("id"));
-                System.out.print("name: " + rs.getString("name"));
+                System.out.print("ID: " + rs.getInt("id"));
+                System.out.print(", name: " + rs.getString("name"));
                 System.out.print(", Age: " + rs.getInt("age"));
-                System.out.println(", address: " + rs.getString("address"));
+                System.out.println(", desc: " + rs.getString("desc"));
             }
             // JDBC
             //spring-jdbcTemplate ... mybatis(ibatis)... JPA

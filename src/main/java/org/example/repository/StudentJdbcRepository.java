@@ -11,15 +11,15 @@ public class StudentJdbcRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     public int countOfStudent() {
-        return jdbcTemplate.queryForObject("select count(1) from students", Integer.class);
+        return jdbcTemplate.queryForObject("select count(1) from student", Integer.class);
     }
 
     public List<String> getStudentNameList() {
-        return jdbcTemplate.queryForList("select name from students", String.class);
+        return jdbcTemplate.queryForList("select name from student", String.class);
     }
 
     public int insertStudent(String name, int age) {
-        return jdbcTemplate.update("insert into students(name, age) values (?, ?)", name, age);
+        return jdbcTemplate.update("insert into student(name, age) values (?, ?)", name, age);
     }
 
     // ID로 학생정보 조회하기
